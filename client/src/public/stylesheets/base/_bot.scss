@@ -19,9 +19,22 @@
   z-index: 1003;
 }
 
-.move-bot-right {
+.position-bot {
+  /*show bot*/
   position: absolute;
   right: 0px;
+  top: 0px;
+}
+
+// .slide-left {
+//   height: 100px;
+//   -webkit-transition: height .3s ease;
+// }
+
+.position-bot1 {
+  /*hide bot*/
+  left: 30em;
+  top: 0px;
 }
 
 /*********************************** below elements work with api.ai responses. make sure doesnt effect rest of app ***********************************/
@@ -356,7 +369,7 @@
 
 /*********************************** Header Chat Button ***********************************/
 
-.open-bot-icon {
+.chat-icon {
   /*speech bubble*/
   position: fixed;
   left: 53em;
@@ -577,4 +590,30 @@ table tr:nth-child(odd) {
 table th {
   background-color: black;
   color: white;
+}
+
+#bot {
+  transform: translateX(100px);
+  transition: transform 400ms ease-in;
+}
+
+#bot.slideIn {
+  transform: translateX(48px);
+}
+
+#bot.slideOut {
+  transform: translateX(100%);
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
 }
