@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-body {
+/*body {
   background-color: red;
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -8,14 +6,35 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+}*/
 /*********************************** above is css reset ***********************************/
-* {
+//@import 'base/reset.scss';
+
+.the-bot {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  z-index: 1003;
+}
+
+.position-bot {
+  /*show bot*/
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+// .slide-left {
+//   height: 100px;
+//   -webkit-transition: height .3s ease;
+// }
+
+.position-bot1 {
+  /*hide bot*/
+  left: 30em;
+  top: 0px;
 }
 
 /*********************************** below elements work with api.ai responses. make sure doesnt effect rest of app ***********************************/
@@ -26,17 +45,18 @@ body {
   font-style: italic;
 }
 
-a {
-  color: #ffffff; /*this is to show links white that are added from api.ai*/
-}
+//a format is needed to style links from api.ai responses
+// a {
+//   color: #ffffff; /*this is to show links white that are added from api.ai*/
+// }
 
 /*********************************** bot bubble/button colors ***********************************/
 
-.blue {
-  background-color: #7fcde5;
+.blue-A {
+  background-color: $bot-blue;
 }
 
-.button-blue {
+.button-blue-B {
   color: #849da3;
   background-color: #b8e2ec;
   padding-top: 20px;
@@ -44,34 +64,34 @@ a {
   height: 22px; /*overwritten by .chat-button's height: 0px, which is necessary to work in moz*/
 }
 
-.button-blue:hover {
-  background-color: #7fcde5;
-  color: #363636;
+.button-blue-B:hover {
+  background-color: $bot-blue;
+  color: $not-black;
   -webkit-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
   height: 0px;
 }
 
-.button-blue:active {
-  background-color: #e3f8ff;
-  color: #363636;
+.button-blue-B:active {
+  background-color: $very-light-blue;
+  color: $not-black;
   height: 0px;
 }
 
 /*********************************** component styling ***********************************/
 
-.grey {
-  background-color: #f0f0f0;
-  color: #363636;
+.grey-C {
+  background-color: $light-grey;
+  color: $not-black;
 }
 
-.light-grey {
+.light-grey-D {
   background-color: #ffffff;
-  color: #363636;
+  color: $not-black;
 }
 
-.chat-container {
+.chat-container-E {
   width: 25em;
   height: 100vh;
   bottom: 75px;
@@ -80,7 +100,7 @@ a {
   vertical-align: bottom;
 }
 
-.chatbox {
+.chatbox-F {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,14 +115,14 @@ a {
   margin-bottom: 75px;
 }
 
-.chatbar {
+.chatbar-G {
   height: 5em;
   width: 25em;
   padding: 16px;
   padding-left: 8px;
   padding-right: 10px;
   border-top: 1px solid #939393;
-  color: #363636;
+  color: $not-black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,14 +133,14 @@ a {
   right: 100px;
 }
 
-.chatbar input[type=text] {
+.chatbar-G input[type=text] {
   height: auto;
   width: 17em;
   font-size: 1em;
   margin: 0px;
   background: transparent;
   border: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: $bot-font;
   font-weight: lighter;
   margin-left: 15px;
 }
@@ -136,7 +156,7 @@ a {
   border-radius: 45px 45px 45px 0px;
 }
 
-.chat-button {
+.chat-button-H {
   width: 11em;
   text-align: center;
   cursor: pointer;
@@ -160,10 +180,10 @@ a {
   height: 0px; /*overwrites .button-blue height, necessary to show correctly in moz*/
 }
 
-.user {
+.user-J {
   /*padding-left: 30px;
   padding-right: 10px;*/
-  border: 3px solid #7fcde5;
+  border: 3px solid $bot-blue;
   border-radius: 45px 45px 0px 45px;
   background-color: #ffffff;
 }
@@ -194,7 +214,7 @@ a {
 
 /*********************************** icon styling ***********************************/
 
-.circle {
+.circle-K {
   background-color: #115077;
   color: #ffffff;
   border-radius: 50%;
@@ -206,7 +226,7 @@ a {
   cursor: pointer;
 }
 
-.circle:hover {
+.circle-K:hover {
   background-color: #316a92;
   border-radius: 50%;
   width: 50px;
@@ -218,7 +238,7 @@ a {
 
 .mic {
   background-color: transparent;
-  color: #bcbcbc;
+  color: $warm-grey;
   border: none;
   cursor: pointer;
   -webkit-transition-duration: 0.1s;
@@ -247,7 +267,7 @@ a {
 
 /*********************************** header ***********************************/
 
-.header {
+.header-L {
   width: 25em;
   height: 73px;
   background-color: rgba(255, 255, 255, .9);
@@ -261,17 +281,17 @@ a {
   right: 100px;
 }
 
-.refresh {
+.refresh-M {
   background: transparent;
   width: 50px;
-  color: #545757;
+  color: $icon-grey;
   border: none;
   cursor: pointer;
   margin: 15px;
 }
 
-.refresh:hover {
-  color: #bcbcbc;
+.refresh-M:hover {
+  color: $warm-grey;
   border: none;
   -webkit-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
@@ -279,8 +299,8 @@ a {
   transition: 0.2s;
 }
 
-.refresh:active {
-  color: #e3f8ff;
+.refresh-M:active {
+  color: $very-light-blue;
   -webkit-transition-duration: 0s;
   -o-transition-duration: 0s;
   transition-duration: 0s;
@@ -288,10 +308,10 @@ a {
   transition: 0s;
 }
 
-.settings {
+.settings-N {
   background: transparent;
   width: 50px;
-  color: #545757;
+  color: $icon-grey;
   border: none;
   cursor: pointer;
   margin: 15px;
@@ -324,7 +344,7 @@ a {
 
 /* General sidebar styles */
 .bm-menu {
-  background: #363636;
+  background: $not-black;
   padding-top: 70px;
   padding-left: 22px;
   padding-right: 0px;
@@ -335,7 +355,7 @@ a {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.icon-size {
+.icon-size-O {
   height: 44px;
   width: 44px;
   margin-top: 25px;
@@ -347,12 +367,24 @@ a {
   overflow-y: visible !important;
 }
 
+/*********************************** Header Chat Button ***********************************/
+
+.chat-icon {
+  /*speech bubble*/
+  position: fixed;
+  left: 53em;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
 /*********************************** Modals ***********************************/
 
 /****************** Modal popup image ****************/
 #myImg {
   border-radius: 10px;
-  border: 2px solid #7fcde5;
+  border: 2px solid $bot-blue;
   cursor: pointer;
   transition: 0.3s;
   width: 200px;
@@ -364,7 +396,7 @@ a {
 }
 
 /* The Modal (background) */
-.modal {
+.modal-P {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -379,7 +411,7 @@ a {
 }
 
 /* Modal Content (image) */
-.modal-content {
+.modal-content-Q {
   margin: auto;
   display: block;
   width: 80%;
@@ -399,7 +431,7 @@ a {
 }
 
 /* Add Animation */
-.modal-content,
+.modal-content-Q,
 #caption {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
@@ -426,18 +458,18 @@ a {
 }
 
 /* The Close Button */
-.close {
+.close-L {
   position: absolute;
   top: 15px;
-  right: 35px;
-  color: #f0f0f0;
+  left: 35px;
+  color: $light-grey;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
+.close-L:hover,
+.close-L:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
@@ -451,7 +483,7 @@ a {
 }
 
 /************** map ******************/
-.map {
+.map-S {
   height: 200px;
   width: 100%;
 }
@@ -472,7 +504,7 @@ a {
 }
 
 .lang-title {
-  color: #f0f0f0;
+  color: $light-grey;
   font-size: 2.6em;
   text-align: center;
   position: relative;
@@ -488,7 +520,7 @@ a {
   color: rgba(241, 241, 241, .5);
 }
 /*.language {
-  color: #f0f0f0;
+  color: $light-grey;
   font-size: 20px;
   padding-top: 34px;
   padding-bottom: 34px;
@@ -517,7 +549,7 @@ label:hover {
   margin-top: 4px;
 }
 
-.radio {
+.radio-T {
   margin: 25px 0; /*space between language options*/
 }
 
@@ -558,4 +590,30 @@ table tr:nth-child(odd) {
 table th {
   background-color: black;
   color: white;
+}
+
+#bot {
+  transform: translateX(100px);
+  transition: transform 400ms ease-in;
+}
+
+#bot.slideIn {
+  transform: translateX(48px);
+}
+
+#bot.slideOut {
+  transform: translateX(100%);
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
 }
