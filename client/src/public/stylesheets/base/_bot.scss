@@ -19,9 +19,22 @@
   z-index: 1003;
 }
 
-.move-bot-right {
-  position: absolute;
+.position-bot {
+  /*keeps bot fixed, and scrolls bot as more questions are asked/answered*/
+  position: fixed;
+  max-height: 100vh;
   right: 0px;
+  top: 0px;
+  overflow-y: scroll;
+  /*padding and margin allow bot to be fully visibile while settings nav is open*/
+  padding-left: 7em;
+  margin-left: -7em;
+}
+
+.position-bot1 {
+  /*hide bot*/
+  left: 30em;
+  top: 0px;
 }
 
 /*********************************** below elements work with api.ai responses. make sure doesnt effect rest of app ***********************************/
@@ -209,8 +222,9 @@
   height: 50px;
   margin-right: 5px;
   border: none;
-  padding-left: 3px;
+  padding-left: 14px;
   cursor: pointer;
+  outline: none;
 }
 
 .circle-K:hover {
@@ -252,6 +266,9 @@
   transition: 0s;
 }
 
+.chat-input {
+  outline: none !important;
+}
 /*********************************** header ***********************************/
 
 .header-L {
@@ -356,10 +373,11 @@
 
 /*********************************** Header Chat Button ***********************************/
 
-.open-bot-icon {
+.chat-icon {
   /*speech bubble*/
   position: fixed;
-  left: 53em;
+  left: 55em;
+  top: 50px;
   display: flex;
   align-items: center;
   z-index: 1000;
@@ -486,7 +504,7 @@
   height: 100%;
   overflow: hidden;
   background-color: rgba(50, 64, 70, 0.9);
-  font-family: Helvetica Neue, Verdana, sans-serif;
+  font-family: $bot-font;
   cursor: default;
 }
 
@@ -577,4 +595,30 @@ table tr:nth-child(odd) {
 table th {
   background-color: black;
   color: white;
+}
+
+#bot {
+  transform: translateX(100px);
+  transition: transform 400ms ease-in;
+}
+
+#bot.slideIn {
+  transform: translateX(0);
+}
+
+#bot.slideOut {
+  transform: translateX(100%);
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
 }
