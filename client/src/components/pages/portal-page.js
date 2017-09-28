@@ -98,21 +98,21 @@ export default connect(mapStateToProps)(Portal);
 // import search from '../../../img/search.svg';
 
 // export default class PortalNoAuth extends Component {
-// 	render() {
-// 		return (
-// 			<div className='PortalNoAuth'>
-// 				<h1>My Portal</h1>
-// 		        <Link to='/login'>
-// 		          <SquareBox boxTitle='Log in / Sign up'
-// 		               imgSrc=''
-// 		          />
-// 		        </Link>
-// 		        <Link to='/profile'>
-// 		          <SquareBox boxTitle='Find a Court Case'
-// 		               imgSrc=''
-// 		          />
-// 		        </Link>
-// 		    </div>
-// 		)
-// 	}
+//  render() {
+//    return (
+//      <div className='PortalNoAuth'>
+//        <h1>My Portal</h1>
+//            <Link to='/login'>
+//              <SquareBox boxTitle='Log in / Sign up'
+//                   imgSrc=''
+//              />
+//            </Link>
+//            <Link to='/profile'>
+//              <SquareBox boxTitle='Find a Court Case'
+//                   imgSrc=''
+//              />
+//            </Link>
+//        </div>
+//    )
+//  }
 // }
