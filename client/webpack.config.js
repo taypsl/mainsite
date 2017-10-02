@@ -42,19 +42,27 @@ const config = {
       //     },
       //   ],
       // },
+      // {
+      //   test: /\.(png|svg)$/,
+      //   loader: 'url-loader',
+      //   query: {
+      //     limit: 10000,
+      //   },
+      // }, 
+      // {
+      //   test: /\.(png|jpg|svg)$/,
+      //   loader: 'file-loader',
+      //   query: {
+      //     name: 'assets/images/[name]-[sha512:hash:base64:7].[ext]',
+      //   },
+      // }
       {
         test: /\.(png|svg)$/,
         loader: 'url-loader',
         query: {
           limit: 10000,
-        },
-      }, 
-      {
-        test: /\.(png|jpg|svg)$/,
-        loader: 'file-loader',
-        query: {
-          name: 'assets/images/[name]-[sha512:hash:base64:7].[ext]',
-        },
+          name: 'assets/images/[name]-[sha512:hash:base64:7].[ext]'
+        }
       }
     ],
   },
