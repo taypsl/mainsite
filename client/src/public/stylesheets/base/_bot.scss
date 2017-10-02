@@ -20,16 +20,16 @@
 }
 
 .position-bot {
-  /*keeps bot fixed, and scrolls bot as more questions are asked/answered*/
-  position: fixed;
-  max-height: 100vh;
+  /*show bot*/
+  position: absolute;
   right: 0px;
   top: 0px;
-  overflow-y: scroll;
-  /*padding and margin allow bot to be fully visibile while settings nav is open*/
-  padding-left: 7em;
-  margin-left: -7em;
 }
+
+// .slide-left {
+//   height: 100px;
+//   -webkit-transition: height .3s ease;
+// }
 
 .position-bot1 {
   /*hide bot*/
@@ -603,7 +603,7 @@ table th {
 }
 
 #bot.slideIn {
-  transform: translateX(0);
+  transform: translateX(48px);
 }
 
 #bot.slideOut {
