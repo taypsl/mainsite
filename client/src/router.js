@@ -52,7 +52,6 @@ export default class AppRouter extends Component {
           {/* <ToggleBox />*/}
           <div className="App">
             <div className="App-mask" />
-
             <Navbar />
             <Search />
             <ChatIcon />
