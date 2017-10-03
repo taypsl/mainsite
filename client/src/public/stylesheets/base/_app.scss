@@ -38,7 +38,7 @@ body {
   }
 
   @include md {
-    padding: 4rem;
+    padding: 4rem 2rem;
   }
 }
 
@@ -102,7 +102,7 @@ button:hover {
     position: fixed;
     margin: -4rem;
     height: 8.5rem;
-    width: 100%;
+    width: 100vw;
     z-index: 100;
   }
 }
@@ -134,10 +134,10 @@ button:hover {
 
   @include lg {
     left: 0;
-    padding: 4rem 0 4rem 4rem;
+    padding: 4rem 1.2rem 2rem 2rem;
     position: fixed;
     top: 0;
-    width: 19rem;
+    width: 17rem;
 
     .Menu-logo-img-sm {
       display: none
@@ -154,7 +154,7 @@ button:hover {
 
   @include lg {
     position: fixed; //mine
-    padding: 6rem 0 4rem 0; //mine
+    padding: 6rem 0 4rem 1rem; //mine
   }
 }
 
@@ -183,10 +183,10 @@ button:hover {
   background-color: $white;
   display: flex;
   @include lg {
-    margin-left: 20rem;
+    margin-left: 16rem;
     position: fixed;
   }
-  width: 100%;
+  // width: 100%;
   z-index: 1000;
 }
 
@@ -200,9 +200,10 @@ button:hover {
 .Page {
   margin: 4rem auto 0 auto;
   max-width: 70rem;
+  z-index: -1000;
 
   @include lg {
-    margin: 8rem 0 0 20rem;
+    margin: 4rem 0 0 16rem;
   }
 }
 
@@ -362,7 +363,7 @@ button:hover {
     text-decoration: none;
   }
   a:hover {
-    font-weight: 600;
+    text-decoration: underline;
   }
 }
 

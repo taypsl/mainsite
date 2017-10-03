@@ -58,7 +58,7 @@ export default class AppRouter extends Component {
             <div className="App-mask" />
             <Navbar />
             <Search />
-            <ChatIcon />
+            // <ChatIcon />
             <OpenBot />
             <div className="Page">
               <Switch>
